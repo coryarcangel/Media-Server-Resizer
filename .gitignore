@@ -1,2 +1,18 @@
 
 .DS_Store
+node_modules
+dist
+out
+*.log*
+userData
+
+stuff
+
+.editorconfig
+.eslintignore
+eslintrc.js
+.prettierignore
+prettierrc.yaml
+.vscode
+
+.DS_Store

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Arcangel Studio Image Resizer</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="page" class="batch">
+    <h1>Arcangel Studio Image Resizer</h1>
+    <div id="settings">
+      <div id="output_folder"></div>
+      <button id="set_output_folder">Pick folder</button>
+      <button id="view_output_folder">Reveal in finder</button>
+    </div>
+      <!-- <h1>Hello World!</h1>
+      <p>Drag the boxes below to somewhere in your OS (Finder/Explorer, Desktop, etc.) to copy an example markdown file.</p>
+      <div style="border:2px solid black;border-radius:3px;padding:5px;display:inline-block" draggable="true" id="drag1">Drag me - File 1</div>
+      <div style="border:2px solid black;border-radius:3px;padding:5px;display:inline-block" draggable="true" id="drag2">Drag me - File 2</div> -->
+      <!-- two modes via radio buttons: batch and individual -->
+      <form id="mode">
+        <fieldset  style="width:fit-content;">
+          <legend>Convert mode:</legend>
+          <input type="radio" id="batch" name="mode" value="batch" checked>
+          <label for="batch">Batch</label><br>
+          <input type="radio" id="individual" name="mode" value="individual">
+          <label for="individual">Individual</label><br>
+        </fieldset>
+        <label class="batch-instructions"></label>
+        <label class="individual-instructions"></label>
+      </form>
+      <div id="batch-wrapper">
+
+      </div>
+      <div id="files-wrapper">
+        <div id="files"></div>
+        <div id="completed-files"></div>
+      </div>
+  </div>
+  <em id="credits">by RGB Systems, 2023</em>
+    <script src="renderer.js"></script>
+</body>
+</html>

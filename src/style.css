@@ -1,0 +1,330 @@
+/* remove padding and margin from all ehaders */
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+#page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#settings {
+  display: flex;
+  gap: 1rem;
+}
+#files-footer {
+  display: flex;
+  justify-content: flex-end;   
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+#files-footer button {
+  font-size: 1.25rem;
+  padding: .25rem .5rem;
+}
+
+#files, #completed-files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#files-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.no-files {
+  border: dashed black 1px;
+  width: fit-content!important;
+  padding: 1rem;
+}
+
+.header {
+  width: 100%;
+}
+
+.file {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  position: relative;
+  border: solid black 1px;
+  /* border-radius: 1rem; */
+  /* padding: .25rem 1rem; */
+  justify-self: flex-start;
+  align-items: center;
+  transition: background .3s;
+  justify-content: center;
+  /* border-radius: 2rem; */
+  justify-content: space-between;
+  width: 16rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.file-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: .5rem;
+}
+
+.file-img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: contain;
+}
+
+.file-name {
+  /* flex: 0 1 50%; */
+  /* word-break: ellipsis; */
+  /* width: 100%; */
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+.file-photog {
+  gap: 1rem;
+}
+
+.file-photog-input {
+  height: 1rem;
+  width: 2rem;
+  font-size: 1rem;
+}
+
+.sizes {
+  display: flex;
+  display: flex;
+  flex-direction: column;
+}
+
+.file-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.delete {
+  color: white;
+  background: rgb(169, 96, 96);
+  border: none;
+}
+
+.delete:hover {
+  background-color: maroon;
+}
+
+.file.completed img ,
+.file.completed .file-name {
+  opacity: .5;
+}
+
+.file.completed .sizes, 
+.file.completed .file-buttons,
+.file.completed .file-screenshot,
+.file.completed .file-numbers,
+  .file.completed .file-name{
+  display: none;
+}
+
+.file-numbers {
+  display: flex;
+  justify-content: space-around!important;
+  width: 100%;
+}
+
+.file.completed .file-reveal {
+  opacity: 1;
+  pointer-events: all;
+
+}
+
+#credits {
+  position: fixed;
+  bottom: 0rem;
+  right: .5rem;
+  font-size: .75rem;
+}
+
+/* .file.completed:after {
+  content: "Completed!";;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+} */
+
+.file:not(.completed) .file-reveal {
+  opacity: .5;
+  pointer-events: none;
+}
+
+.overlay.file-reveal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  background: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.file.completed:hover .overlay.file-reveal {
+  display: flex;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+.file:hover {
+  background: linear-gradient(0deg, rgba(195,195,195,0.2) 0%, rgba(2,0,36,0) 100%);
+}
+
+.completed-header, .not-yet-files {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.no-files {
+  padding: 3rem!important;
+}
+
+.file-convert, #batch-wrapper .run-batch {
+  background-color: green;
+  color: white;
+  border: solid green 1px;
+  padding: .25rem 1rem;
+}
+
+.file-convert:hover, #batch-wrapper .run-batch:hover {
+  background-color: rgb(29, 99, 29);
+  /* color: black; */
+}
+
+.file-name {
+  border: none;
+  outline: none;
+  line-height: 1;
+  margin: .25rem;
+  padding: 0;
+  font-size: .75rem;
+  margin-top: 0;
+}
+.file-name:hover {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+.file-name-input {
+  width: calc(100% - 1rem) ;
+  padding:  .25rem .5rem;
+  /* margin: .25rem; */
+  border: none;
+  border-bottom: solid black 1px;
+  font-size: 1.25rem;
+  cursor:
+}
+
+.file-year {
+  width: 3rem;
+}
+
+.file-inv {
+  width: 2rem;
+}
+
+.file-name-input::placeholder {
+  /* color: black; */
+
+}
+
+#batch-wrapper {
+  display: none;
+}
+
+#page.batch #files {
+  display: none;
+}
+#page.batch #batch-wrapper {
+  display: block;
+}
+
+#batch-wrapper .file {
+  width: 100%;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.img-previews {
+  width: 16rem;
+  height: 16rem;
+  position: relative;
+}
+
+.img-previews .file-img {
+  position: absolute;
+  /* center it */
+  width: 13rem;
+  height: 13rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* stagger each file-img's rotation so a stack can be visible */
+.img-previews .file-img:nth-child(6n+1) {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+.img-previews .file-img:nth-child(6n+2) {
+  transform: translate(-50%, -50%) rotate(10deg);
+}
+.img-previews .file-img:nth-child(6n+3) {
+  transform: translate(-50%, -50%) rotate(-10deg);
+}
+.img-previews .file-img:nth-child(6n+4) {
+  transform: translate(-50%, -50%) rotate(20deg);
+}
+.img-previews .file-img:nth-child(6n+5) {
+  transform: translate(-50%, -50%) rotate(-20deg);
+}
+.img-previews .file-img:nth-child(6n+0) {
+  transform: translate(-50%, -50%) rotate(24deg);
+}
+
+#batch-wrapper {
+  .file-numbers {
+    justify-content: center!important;
+    gap: 1rem;
+  }
+  .file-name {
+    display: none;
+  }
+}
+
+#batch.completed {
+  display: none;
+}
+

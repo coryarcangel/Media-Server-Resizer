@@ -1,0 +1,47 @@
+appId: com.arcangelstudio.imageresizer
+productName: arcangel-studio-image-resizer
+directories:
+  buildResources: build
+files:
+  - '!**/.vscode/*'
+  - '!{.eslintignore,.eslintrc.js,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
+asarUnpack:
+  - resources/**
+win:
+  executableName: electron-vite-test
+nsis:
+  artifactName: ${name}-${version}-setup.${ext}
+  shortcutName: ${productName} 
+  uninstallDisplayName: ${productName}
+  createDesktopShortcut: always
+mac:
+  target:
+    - target: 'default'
+      arch:
+        - x64
+        - arm64
+  entitlementsInherit: build/entitlements.mac.plist
+  hardenedRuntime: true
+  entitlements: "build/entitlements.mac.plist"
+  gatekeeperAssess: false
+  extendInfo:
+    - NSCameraUsageDescription: Application requests access to the device's camera.
+    - NSMicrophoneUsageDescription: Application requests access to the device's microphone.
+    - NSDocumentsFolderUsageDescription: Application requests access to the user's Documents folder.
+    - NSDownloadsFolderUsageDescription: Application requests access to the user's Downloads folder.
+  notarize: true
+dmg:
+  artifactName: ${name}-${version}.${ext}
+linux:
+  target:
+    - AppImage
+    - snap
+    - deb
+  maintainer: electronjs.org
+  category: Utility
+appImage:
+  artifactName: ${name}-${version}.${ext}
+npmRebuild: false
+publish:
+  provider: generic
+  url: https://example.com/auto-updates
